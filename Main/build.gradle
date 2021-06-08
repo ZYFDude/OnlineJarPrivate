@@ -45,7 +45,7 @@ dependencies
     //implementation project(':Lint:LintJar')
     implementation fileTree(dir: "libs", include: ['*.jar','*.aar'])
 
-    implementation 'com.github.ZYFDude:OnlineJar:1.0.1'
+    implementation 'com.github.ZYFDude:OnlineJarPrivate:1.0.0'
 
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
