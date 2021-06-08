@@ -1,5 +1,4 @@
 rootProject.name='OnlineJarPrivate'
 
 include ':Main'
-include ':OnlineModule'
 include ':OnlineModulePrivate'
