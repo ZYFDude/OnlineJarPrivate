@@ -13,6 +13,6 @@ public class Test
 {
     public String test()
     {
-        return "Hello Online Private Jar";
+        return "Hello Online SNAPSHOT Jar";
     }
 }
