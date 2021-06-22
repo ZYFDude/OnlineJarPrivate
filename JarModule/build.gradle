@@ -1,4 +1,5 @@
 plugins {id 'com.android.library'}
+apply plugin: 'maven-publish'
 
 group 'com.townspriter.android.test'
 ext.artifactId='online'
@@ -70,3 +71,43 @@ task exportJar(type:Copy){
 }
 
 exportJar.dependsOn(deleteOldJar,build)
+
+afterEvaluate
+{
+    publishing
+    {
+        publications
+        {
+            release(MavenPublication)
+            {
+                from components.release
+                groupId='com.townspriter.android.test'
+                artifactId='OnlineJarPrivate'
+                version='1.0.0'
+            }
+
+            debug(MavenPublication)
+            {
+                from components.debug
+                groupId='com.townspriter.android.test'
+                artifactId='OnlineJarPrivate'
+                version='1.0.0'
+            }
+        }
+
+        repositories
+        {
+            maven
+            {
+                def releasesRepoUrl="https://raw.github.com/ZYFDude/OnlineJarPrivate/maven-releases/"
+                def snapshotsRepoUrl="https://raw.github.com/ZYFDude/OnlineJarPrivate/maven-snapshots/"
+                url=project.hasProperty('release')?releasesRepoUrl:snapshotsRepoUrl
+                credentials
+                {
+                    username='709892866@QQ.com'
+                    password='December.1231'
+                }
+            }
+        }
+    }
+}
